@@ -46,7 +46,6 @@ public class RebuildClient {
 		if (httpClient == null) {
 			throw new RebuildApiConfigurationException("HttpClient is null");
 		}
-		asd(Arrays.asList(Double.valueOf(10.0)));
 		this.httpClient = httpClient;
 
 	}

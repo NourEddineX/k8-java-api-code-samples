@@ -1,4 +1,6 @@
 
+
+
 ### Samples how to initialize Java API client for Rebuild API
 
 Example how to initialize call for /api/rebuild endpoint
@@ -10,6 +12,10 @@ Example how to initialize call for /api/rebuild endpoint
    		rebuildClient.rebuild(jwt, requestFilePath, destinationFilePath, new ContentManagementFlags());
 ```
 
+Example of http call 
+``curl --location --request POST 'http://localhost:8080/api/rebuild?source=/Users/nikita/Documents/glasswall-api/src/main/resources/JS_Siemens.pdf&destination=/Users/nikita/Documents/glasswall-api/src/main/resources/JS_Siemens1.pdf' \
+  --header 'Authorization: jwt token'``
+
 Example how to initialize call for /api/rebuild/file endpoint
 ```		
 		String jwt = "jwtToken";
@@ -20,6 +26,10 @@ Example how to initialize call for /api/rebuild/file endpoint
 		rebuildClient.rebuildFile(jwt, requestFilePath, destinationFilePath, new ContentManagementFlags());
 ```
 
+Example of http call 
+``curl --location --request POST 'http://localhost:8080/api/rebuild/file?source=/Users/nikita/Documents/glasswall-api/src/main/resources/JS_Siemens.pdf&destination=/Users/nikita/Documents/glasswall-api/src/main/resources/JS_Siemens1.pdf' \
+  --header 'Authorization: jwt token'``
+
 Example how to initialize call for /api/rebuild/base64 endpoint
 ```
 		String jwt = "jwtToken";
@@ -29,3 +39,16 @@ Example how to initialize call for /api/rebuild/base64 endpoint
 		String destinationFilePath =  "/request/file/path/file.pdf";;
 		rebuildClient.rebuildBase64(jwt, requestFilePath, destinationFilePath, new ContentManagementFlags());
 ```
+
+Example of http call 
+``curl --location --request POST 'http://localhost:8080/api/rebuild/base64?source=/Users/nikita/Documents/glasswall-api/src/main/resources/JS_Siemens.pdf&destination=/Users/nikita/Documents/glasswall-api/src/main/resources/JS_Siemens1.pdf' \
+  --header 'Authorization: jwt token'``
+
+Instructions how to build and run docker container 
+
+```
+docker build --tag web-service .
+docker run --publish 8000:8080 --detach --name bb web-service
+```
+
+and it will run application on 8000 port

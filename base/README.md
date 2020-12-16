@@ -46,8 +46,8 @@ Example of http call
 
 Instructions how to build and run docker container 
 
-```docker build --tag web-service .
-
+```
+docker build --tag web-service .
 docker run --publish 8000:8080 --detach --name bb web-service
 ```
 

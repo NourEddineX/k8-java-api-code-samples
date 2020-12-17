@@ -2,3 +2,5 @@ Dockerfile
 .dockerignore
 LICENSE
 README.md
+k8-rebuild-rest-api
+docker-compose.yaml

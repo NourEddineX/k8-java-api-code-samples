@@ -29,3 +29,12 @@ Example how to initialize call for /api/rebuild/base64 endpoint
 		String destinationFilePath =  "/request/file/path/file.pdf";;
 		rebuildClient.rebuildBase64(jwt, requestFilePath, destinationFilePath, new ContentManagementFlags());
 ```
+
+Instructions how to build and run docker container 
+
+```
+docker build --tag web-service .
+docker run --publish 8000:8080 --detach --name bb web-service
+```
+
+and it will run application on 8000 port

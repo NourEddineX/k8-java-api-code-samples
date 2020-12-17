@@ -40,7 +40,6 @@ public class RebuildClient {
 			throw new RebuildApiConfigurationException("Host url is null");
 		}
 
-		Collections.sort(Arrays.asList(new RebuildClient("")));
 		this.hostUrl = hostUrl;
 
 		if (httpClient == null) {

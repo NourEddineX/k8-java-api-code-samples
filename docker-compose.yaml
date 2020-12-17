@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  k8-rebuild-rest-api:
+    build:
+      context: ./k8-rebuild-rest-api
+      dockerfile: Source/Service/Dockerfile
+  k8-java-api-code-samples:
+    build: .
+    environment:
+      - "REBUILD_API_URL=http://k8-rebuild-rest-api"
+    ports:
+      - "80:8080"
+

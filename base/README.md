@@ -43,12 +43,3 @@ Example how to initialize call for /api/rebuild/base64 endpoint
 Example of http call 
 ``curl --location --request POST 'http://localhost:8080/api/rebuild/base64?source=/Users/nikita/Documents/glasswall-api/src/main/resources/JS_Siemens.pdf&destination=/Users/nikita/Documents/glasswall-api/src/main/resources/JS_Siemens1.pdf' \
   --header 'Authorization: jwt token'``
-
-Instructions how to build and run docker container 
-
-```
-docker build --tag web-service .
-docker run --publish 8000:8080 --detach --name bb web-service
-```
-
-and it will run application on 8000 port

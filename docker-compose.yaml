@@ -9,7 +9,7 @@ services:
   k8-java-api-code-samples:
     build: .
     environment:
-      - "REBUILD_API_URL=http://k8-rebuild-rest-api"
+      - "REBUILD_API_URL=http://reverse-proxy"
     ports:
       - "9999:8080"
     volumes:

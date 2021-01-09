@@ -94,7 +94,7 @@ public class RebuildClient {
 			throw new RebuildApiException("Request and response decoded content are the same!");
 		}
 		byte[] encode = Base64.getDecoder().decode(decodedStringResponse.body());
-		FileUtils.writeByteArrayToFile(new File(destinationFilePath), encode);
+		FileUtils.writeByteArrayToFile(new File(destinationFilePath), decodedStringResponse.body());
 	}
 
 	@SneakyThrows
@@ -138,13 +138,11 @@ public class RebuildClient {
 			.header("Authorization", jwtToken)
 			.build();
 
-		HttpResponse<String> send = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+		HttpResponse<byte[]> send = httpClient.send(request, HttpResponse.BodyHandlers.ofByteArray());
 		if (send.statusCode() != 200) {
 			throw new RebuildApiException("Response is not 200");
 		}
-
-		byte[] encode = Base64.getDecoder().decode(send.body().getBytes());
-		FileUtils.writeByteArrayToFile(new File(destinationFileUrl), encode);
+		FileUtils.writeByteArrayToFile(new File(destinationFileUrl), send.body());
 	}
 
 	public static HttpRequest.BodyPublisher oMultipartData(Map<Object, Object> data,

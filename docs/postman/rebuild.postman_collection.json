@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "70ac76c7-3abb-4610-b1b2-6edb83dbe393",
+		"_postman_id": "01b3991c-dfa4-4dbd-8f3c-54e424ac2948",
 		"name": "rebuild",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "rebuild",
+			"name": "rebuild in java",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -15,8 +15,8 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "no-need",
-						"type": "text"
+						"type": "text",
+						"value": "no-need"
 					}
 				],
 				"url": {
@@ -39,12 +39,37 @@
 						{
 							"key": "destination",
 							"value": "/samples/output/f3.pdf"
-						},
-						{
-							"key": "",
-							"value": null,
-							"disabled": true
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rebuild in c#",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "///wsl$/Ubuntu-20.04/home/yarden/k8-java-api-code-samples/samples/input/f3.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/rebuild/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"rebuild",
+						"file"
 					]
 				}
 			},

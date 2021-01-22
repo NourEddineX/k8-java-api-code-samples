@@ -48,10 +48,29 @@
 		{
 			"name": "rebuild in c#",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "///wsl$/Ubuntu-20.04/home/yarden/k8-java-api-code-samples/samples/input/f3.pdf"
+						}
+					]
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://localhost/api/rebuild/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"rebuild",
+						"file"
+					]
 				}
 			},
 			"response": []

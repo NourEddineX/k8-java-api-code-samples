@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "70ac76c7-3abb-4610-b1b2-6edb83dbe393",
+		"name": "rebuild",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "rebuild",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "no-need",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9999/api/rebuild/file?source=/samples/input/f3.pdf&destination=/samples/output/f3.pdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"api",
+						"rebuild",
+						"file"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "/samples/input/f3.pdf"
+						},
+						{
+							"key": "destination",
+							"value": "/samples/output/f3.pdf"
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
